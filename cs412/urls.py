@@ -1,3 +1,4 @@
+#cs412/urls.py
 """
 URL configuration for cs412 project.
 
@@ -16,9 +17,14 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
+    #Check path on this
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("admin/cs412/hw", admin.site.urls),
-]
+    path("hw/", include("hw.urls")),
+    path('quotes/', include('quotes.urls')),
+
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

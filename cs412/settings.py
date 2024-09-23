@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "hw", #new app
+    "quotes"
 ]
 
 MIDDLEWARE = [
@@ -53,19 +55,26 @@ ROOT_URLCONF = "cs412.urls"
 
 TEMPLATES = [
     {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'string_if_invalid': 'WARNING: {{%s}} is not a valid context variable',
+            'context_processors': [
+                
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',  # Add this line
+                'django.template.context_processors.csrf',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.static',
+                'django.template.context_processors.media',
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = "cs412.wsgi.application"
 
@@ -114,6 +123,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+
+# tell Django about our static resources directory: 
+
+import os
+STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
+
 
 STATIC_URL = "static/"
 
