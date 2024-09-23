@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-p%1d6+uwr$4v4&yia)%w&2$9lxkuem5*kw-en=)ie9f=tv75m3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gentle-shelf-42648-e03337c530b4.herokuapp.com']
 
 
 # Application definition
