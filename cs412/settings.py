@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "hw", #new app
     "quotes"
+    "main"
+    "order"
+    "confirmation"
 ]
 
 MIDDLEWARE = [

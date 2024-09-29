@@ -35,6 +35,7 @@ def show_all(request):
     context = {'quotes_images': quotes_images}
     return render(request, 'quotes/show_all.html', context)
 
+
 def about(request):
     context = {
         'person_name': 'Bruce Lee', 
