@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-p%1d6+uwr$4v4&yia)%w&2$9lxkuem5*kw-en=)ie9f=tv75m3"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['gentle-shelf-42648-e03337c530b4.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'gentle-shelf-42648-e03337c530b4.herokuapp.com']
 
 
 # Application definition
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "hw", #new app
-    "quotes"
-
+    "quotes",
+    "restaurant", 
 ]
 
 MIDDLEWARE = [

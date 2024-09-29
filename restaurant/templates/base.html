@@ -1,0 +1,26 @@
+
+<!-- ~/restaurant/templates/base.html-->
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>{% block title %}Restaurant App{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'main' %}">Main Page</a></li>
+                <li><a href="{% url 'order' %}">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
