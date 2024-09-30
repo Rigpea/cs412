@@ -1,14 +1,15 @@
-
-<!-- ~/restaurant/templates/base.html-->
-
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'restaurant/css/styles.css' %}">
+    
     <title>{% block title %}Restaurant App{% endblock %}</title>
 </head>
 <body>
+    <h1 class="restaurant-title">The Lamas</h1>
+    <hr>
     <header>
         <nav>
             <ul>
@@ -22,5 +23,9 @@
         {% block content %}
         {% endblock %}
     </main>
+    <hr>
+    <hr>
+    <p class="order-author">Page created by rigpea@bu.edu</p>
+    <p class="Time">Generated on Sunday Sep 29 00:41:05 2024</p>
 </body>
 </html>
